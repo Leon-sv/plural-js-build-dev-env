@@ -7,7 +7,10 @@
 		"start": "npm-run-all --parallel security-check open:src lint:watch",
 		"open:src": "node buildScripts/srcServer.js",
 		"lint": "esw webpack.config.* src buildScript --color",
-		"lint:watch": "npm run lint -- --watch"
+		"lint:watch": "npm run lint -- --watch",
+		"test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
+		"testLwatch": "npm run test -- --watch",
+		"comment:test": "runs testsetup then any tests in src directory and subdirectories, in files that end in test.js"
 	},
 	"author": "Cory House",
 	"license": "MIT",
